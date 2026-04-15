@@ -33,7 +33,7 @@ relationships that matter most.
 </div>
 
 {/* total friends section */}
-   <section className="grid grid-cols-4 container mx-auto gap-4 mb-5 ">
+<section className="grid grid-cols-2  lg:grid lg:grid-cols-4 container mx-auto gap-4 mb-5 ">
     <div className="text-center mt-10 bg-base-100 rounded-2xl p-2">
   <h2 className="text-4xl font-bold text-green-600">
     {friends?.length || 0}
@@ -71,7 +71,7 @@ relationships that matter most.
   <h3 className="text-2xl font-semibold text-[#1F2937]">Your Friends</h3>
 
 
- <div className="grid grid-cols-4 gap-4 container mx-auto ">
+ <div className=" grid grid-cols-1 md:grid md:grid-cols-2 lg:grid lg:grid-cols-4 gap-4 container mx-auto ">
     {
         friends.map(friend =>  <div key={friend.id} className="card bg-base-100  shadow-sm">
   <figure>
