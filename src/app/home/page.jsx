@@ -1,4 +1,5 @@
 import { Plus } from "lucide-react";
+import Image from "next/image";
 
 export const metadata = {
   title: "Home",
@@ -8,8 +9,11 @@ export const metadata = {
 
 
 const HomePage = async () => {
+
+  
     const res = await fetch("http://localhost:3000/friends.json");
     const friends = await res.json();
+    
 
     return (
        <div className="bg-base-200">
@@ -24,7 +28,40 @@ relationships that matter most.
       <button className="btn btn-success text-white "><Plus></Plus>Add a Friend</button>
     </div>
   </div>
+
+
 </div>
+
+{/* total friends section */}
+   <section className="grid grid-cols-4 container mx-auto gap-4 mb-5 ">
+    <div className="text-center mt-10 bg-base-100 rounded-2xl p-2">
+  <h2 className="text-4xl font-bold text-green-600">
+    {friends?.length || 0}
+  </h2>
+  <p className="text-gray-500">Total Friends</p>
+</div>
+
+<div className="text-center mt-10 bg-base-100 rounded-2xl p-2">
+  <h2 className="text-4xl font-bold text-green-600">
+    {friends?.status || 0}
+  </h2>
+  <p className="text-gray-500">On Track</p>
+</div>
+
+<div className="text-center mt-10 bg-base-100 rounded-2xl p-2">
+  <h2 className="text-4xl font-bold text-green-600">
+    {friends?.id || 0}
+  </h2>
+  <p className="text-gray-500">Need Attention</p>
+</div>
+
+<div className="text-center mt-10 bg-base-100 rounded-2xl p-2">
+  <h2 className="text-4xl font-bold text-green-600">
+    {friends?.days_since_contact || 0}
+  </h2>
+  <p className="text-gray-500">Interactions This Month</p>
+</div>
+   </section>
 
 
 
@@ -34,13 +71,17 @@ relationships that matter most.
   <h3 className="text-2xl font-semibold text-[#1F2937]">Your Friends</h3>
 
 
- <div className="grid grid-cols-4 gap-4 container mx-auto">
+ <div className="grid grid-cols-4 gap-4 container mx-auto ">
     {
         friends.map(friend =>  <div key={friend.id} className="card bg-base-100  shadow-sm">
   <figure>
-    {/* <img
-      src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-      alt="Shoes" /> */}
+     <Image
+            src={friend.picture}
+            alt={friend.name}
+            width={80}
+            height={80}
+            className="rounded-full mt-4"
+          />
   </figure>
   <div className="card-body text-center">
    

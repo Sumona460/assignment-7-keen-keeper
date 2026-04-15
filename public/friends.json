@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "John Doe",
-    "picture": "https://randomuser.me/api/portraits/men/32.jpg",
+    "picture": "https://images.unsplash.com/photo-1654110455429-cf322b40a906?q",
     "email": "john.doe@gmail.com",
     "days_since_contact": 12,
     "status": "overdue",
@@ -26,8 +26,8 @@
   {
     "id": 3,
     "name": "Rahim Khan",
-    "picture": "https://randomuser.me/api/portraits/men/76.jpg",
-    "email": "rahim.khan@gmail.com",
+    "picture": "https://randomuser.me/api/portraits/men/29.jpg",
+    "email": "david.miller@gmail.com",
     "days_since_contact": 20,
     "status": "overdue",
     "tags": ["school", "football"],
