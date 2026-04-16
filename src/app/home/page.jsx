@@ -1,5 +1,6 @@
 import { Plus } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "Home",
@@ -11,8 +12,16 @@ export const metadata = {
 const HomePage = async () => {
 
   
-    const res = await fetch("http://localhost:3000/friends.json");
+    const res = await fetch("http://localhost:3000/friends.json", {
+  cache: "no-store"
+});
     const friends = await res.json();
+
+
+    const totalFriends = friends.length;
+const onTrack = friends.filter(f => f.status === "on-track").length;
+const overdue = friends.filter(f => f.status === "overdue").length;
+const interactions = friends.reduce((acc, f) => acc + f.days_since_contact, 0);
     
 
     return (
@@ -33,35 +42,29 @@ relationships that matter most.
 </div>
 
 {/* total friends section */}
-<section className="grid grid-cols-2  lg:grid lg:grid-cols-4 container mx-auto gap-4 mb-5 ">
-    <div className="text-center mt-10 bg-base-100 rounded-2xl p-2">
-  <h2 className="text-4xl font-bold text-green-600">
-    {friends?.length || 0}
-  </h2>
-  <p className="text-gray-500">Total Friends</p>
-</div>
+<section className="grid grid-cols-2 lg:grid-cols-4 container mx-auto gap-4 mb-5">
+  
+  <div className="text-center mt-10 bg-base-100 rounded-2xl p-4">
+    <h2 className="text-4xl font-bold text-green-600">{totalFriends}</h2>
+    <p className="text-gray-500">Total Friends</p>
+  </div>
 
-<div className="text-center mt-10 bg-base-100 rounded-2xl p-2">
-  <h2 className="text-4xl font-bold text-green-600">
-    {friends?.status || 0}
-  </h2>
-  <p className="text-gray-500">On Track</p>
-</div>
+  <div className="text-center mt-10 bg-base-100 rounded-2xl p-4">
+    <h2 className="text-4xl font-bold text-green-600">{onTrack}</h2>
+    <p className="text-gray-500">On Track</p>
+  </div>
 
-<div className="text-center mt-10 bg-base-100 rounded-2xl p-2">
-  <h2 className="text-4xl font-bold text-green-600">
-    {friends?.id || 0}
-  </h2>
-  <p className="text-gray-500">Need Attention</p>
-</div>
+  <div className="text-center mt-10 bg-base-100 rounded-2xl p-4">
+    <h2 className="text-4xl font-bold text-green-600">{overdue}</h2>
+    <p className="text-gray-500">Need Attention</p>
+  </div>
 
-<div className="text-center mt-10 bg-base-100 rounded-2xl p-2">
-  <h2 className="text-4xl font-bold text-green-600">
-    {friends?.days_since_contact || 0}
-  </h2>
-  <p className="text-gray-500">Interactions This Month</p>
-</div>
-   </section>
+  <div className="text-center mt-10 bg-base-100 rounded-2xl p-4">
+    <h2 className="text-4xl font-bold text-green-600">{interactions}</h2>
+    <p className="text-gray-500">Interactions</p>
+  </div>
+
+</section>
 
 
 
@@ -94,17 +97,28 @@ relationships that matter most.
     </p>
      
      <div>
-         <div className="badge badge-soft badge-success">{friend.tags}</div>
+        
+
+         <div className="flex flex-wrap gap-2 justify-center">
+  {friend.tags.map((tag, i) => (
+    <span key={i} className="badge badge-soft badge-success">
+      {tag}
+    </span>
+  ))}
+</div>
          <br />
          
       <div className="badge badge-soft badge-warning mt-2.5">{friend.status}</div>
      </div>
-    
-         
-    
-    
-     
   </div>
+
+   <Link
+          href={`/friends/${friend.id}`} className="text-center text-gray-400"
+
+        >
+         View Details
+         
+        </Link>
 </div>
  )
     }
