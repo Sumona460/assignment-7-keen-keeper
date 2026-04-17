@@ -94,5 +94,54 @@
     "bio": "Neighbor and study partner during exams.",
     "goal": 5,
     "next_due_date": "2026-04-21"
+  },
+   {
+    "id": 9,
+    "name": "Imran Hossain",
+    "picture": "https://randomuser.me/api/portraits/men/41.jpg",
+    "email": "imran.hossain@gmail.com",
+    "days_since_contact": 18,
+    "status": "overdue",
+    "tags": ["office", "manager"],
+    "bio": "Former manager. Guided me a lot in career.",
+    "goal": 14,
+    "next_due_date": "2026-04-07"
+  },
+  {
+    "id": 10,
+    "name": "Mariam Khan",
+    "picture": "https://randomuser.me/api/portraits/women/52.jpg",
+    "email": "mariam.khan@gmail.com",
+    "days_since_contact": 4,
+    "status": "on-track",
+    "tags": ["friend", "shopping"],
+    "bio": "Close friend. We often go shopping together.",
+    "goal": 7,
+    "next_due_date": "2026-04-19"
+  },
+  {
+    "id": 11,
+    "name": "Sabbir Ahmed",
+    "picture": "https://randomuser.me/api/portraits/men/61.jpg",
+    "email": "sabbir.ahmed@gmail.com",
+    "days_since_contact": 11,
+    "status": "due-soon",
+    "tags": ["gaming", "online friend"],
+    "bio": "Met online through gaming. Still play together.",
+    "goal": 10,
+    "next_due_date": "2026-04-17"
+  },
+  {
+    "id": 12,
+    "name": "Farzana Akter",
+    "picture": "https://randomuser.me/api/portraits/women/75.jpg",
+    "email": "farzana.akter@gmail.com",
+    "days_since_contact": 0,
+    "status": "on-track",
+    "tags": ["cousin", "family"],
+    "bio": "Cousin. Regularly stay in touch with family events.",
+    "goal": 5,
+    "next_due_date": "2026-04-22"
   }
+
 ]
