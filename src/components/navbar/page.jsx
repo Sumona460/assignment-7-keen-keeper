@@ -11,7 +11,7 @@ const pathName = usePathname();
     return (
         <div className="navbar  bg-base-100 shadow-sm flex justify-between">
   <div className="">
-    <span href='/' className=" text-3xl font-bold ml-5  ">Keen<span className='font-light text-gray-500'>Keeper</span></span>
+    <span href='/' className=" text-3xl font-bold ml-5  ">Keen<span className=' text-green-600 font-light'>Keeper</span></span>
   </div>
 
 

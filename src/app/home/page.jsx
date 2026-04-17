@@ -30,7 +30,7 @@ const interactions = friends.reduce((acc, f) => acc + f.days_since_contact, 0);
   <div className="hero-content text-center">
     <div className=" mt-20">
       <h1 className="text-5xl font-bold">Friends to keep close in your life</h1>
-      <p className="py-6">
+      <p className="py-6 text-gray-400">
         Your personal shelf of meaningful connections. Browse, tend, and nurture the <br></br>
 relationships that matter most.
       </p>
