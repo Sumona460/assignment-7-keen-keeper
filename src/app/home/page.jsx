@@ -25,7 +25,7 @@ const interactions = friends.reduce((acc, f) => acc + f.days_since_contact, 0);
     
 
     return (
-       <div className="bg-base-200">
+       <div className="bg-base-200 p-8 md:p-0 lg:p-0">
     <div className="hero  min-h-full">
   <div className="hero-content text-center">
     <div className=" mt-20">

@@ -1,3 +1,5 @@
+import { PieChart } from "lucide-react";
+
 export const metadata = {
   title: "Stats",
   description: "Page",
@@ -5,8 +7,11 @@ export const metadata = {
 
 const StatsPage = () => {
     return (
-        <div>
-            <h2>Stats page ready!</h2>
+        <div className="bg-gray-100">
+            <h2 className="text-5xl font-bold">Friendship Analytics</h2>
+            <div>
+               
+            </div>
         </div>
     );
 };

@@ -1,6 +1,8 @@
 import { Archive, BellMinus, MessageSquare, Phone, Trash2, Video } from "lucide-react";
 import Image from "next/image";
 
+import QuickActions from "@/components/QuickActions";
+
 const FriendDetails = async ({ params }) => {
 
    const { id } = await params; 
@@ -127,22 +129,8 @@ const FriendDetails = async ({ params }) => {
           <div className="bg-white rounded-xl p-6 shadow">
             <h3 className="mb-3 font-semibold">Quick Check-In</h3>
 
-            <div className="grid grid-cols-3 gap-4">
-              <button className="btn flex flex-col h-25">
-                <Phone size={18} />
-                Call
-              </button>
-
-              <button className="btn flex flex-col h-25">
-                <MessageSquare size={18} />
-                Text
-              </button>
-
-              <button className="btn flex flex-col h-25">
-                <Video size={18} />
-                Video
-              </button>
-            </div>
+           
+            <QuickActions friend={friend} />
           </div>
 
           
